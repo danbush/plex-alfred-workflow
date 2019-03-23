@@ -429,7 +429,7 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 		<string>192.168.1.8:32400</string>
 	</dict>
 	<key>version</key>
-	<string>0.1</string>
+	<string>0.3</string>
 	<key>webaddress</key>
 	<string>http://plex.tv</string>
 </dict>
