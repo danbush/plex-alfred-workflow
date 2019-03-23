@@ -388,10 +388,10 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 		<key>plex-token</key>
 		<string>xx</string>
 		<key>pms-ip-address</key>
-		<string>192.168.1.8:32400</string>
+		<string>xx</string>
 	</dict>
 	<key>version</key>
-	<string>1.01</string>
+	<string>1.02</string>
 	<key>webaddress</key>
 	<string>http://plex.tv</string>
 </dict>
