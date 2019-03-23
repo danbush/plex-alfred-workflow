@@ -113,8 +113,8 @@
 				<integer>0</integer>
 				<key>script</key>
 				<string># THESE VARIABLES MUST BE SET. SEE THE ONEUPDATER README FOR AN EXPLANATION OF EACH.
-readonly remote_info_plist='https://raw.githubusercontent.com/danbush/wapo-unfurl-discord/master/info.plist'
-readonly workflow_url='https://github.com/danbush/wapo-unfurl-discord/raw/master/Washington%20Post%20Unfurler.alfredworkflow'
+readonly remote_info_plist='https://raw.githubusercontent.com/danbush/plex-alfred-workflow/master/info.plist'
+readonly workflow_url='https://github.com/danbush/plex-alfred-workflow/raw/master/Plex%20Search.alfredworkflow'
 readonly download_type='direct'
 readonly frequency_check='0'
 
