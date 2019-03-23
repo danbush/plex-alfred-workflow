@@ -322,7 +322,8 @@ fi</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Hit the little "[x]" button at the top right, and insert your plex-token and the IP address of your Plex Media Server (with port).
+	<string>On first installation:
+Hit the little "[x]" button at the top right, and insert your plex-token and the IP address of your Plex Media Server (with port).
 
 Here's a link to help you find your token:
 https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/</string>
@@ -390,7 +391,7 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 		<string>192.168.1.8:32400</string>
 	</dict>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.01</string>
 	<key>webaddress</key>
 	<string>http://plex.tv</string>
 </dict>
