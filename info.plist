@@ -19,6 +19,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>59A9CCB4-C4E3-4450-9929-2D9D79AB63EC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>238C5B35-5E54-4ACF-9A8A-91FB1603F935</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</key>
 		<array>
 			<dict>
@@ -47,6 +60,16 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>438D98CA-6B20-48EA-96E7-52E73A1C499B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>59A9CCB4-C4E3-4450-9929-2D9D79AB63EC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -226,6 +249,25 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>E2DB7BB2-A020-42E1-9BC2-DB762538A89E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>inputstring</key>
 				<string>{query}</string>
 				<key>matchcasesensitive</key>
@@ -245,19 +287,36 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>E2DB7BB2-A020-42E1-9BC2-DB762538A89E</string>
+			<string>238C5B35-5E54-4ACF-9A8A-91FB1603F935</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>2</integer>
+				<key>matchstring</key>
+				<string>&lt;?xml*</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>59A9CCB4-C4E3-4450-9929-2D9D79AB63EC</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -269,26 +328,40 @@ Here's a link to help you find your token:
 https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/</string>
 	<key>uidata</key>
 	<dict>
+		<key>238C5B35-5E54-4ACF-9A8A-91FB1603F935</key>
+		<dict>
+			<key>xpos</key>
+			<integer>460</integer>
+			<key>ypos</key>
+			<integer>340</integer>
+		</dict>
 		<key>438D98CA-6B20-48EA-96E7-52E73A1C499B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>250</integer>
+			<integer>350</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>250</integer>
+		</dict>
+		<key>59A9CCB4-C4E3-4450-9929-2D9D79AB63EC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>350</integer>
+			<key>ypos</key>
+			<integer>370</integer>
 		</dict>
 		<key>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>260</integer>
+			<integer>350</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>100</integer>
 		</dict>
 		<key>932D137E-9894-45D6-A929-1EF9B7EF29FE</key>
 		<dict>
 			<key>xpos</key>
-			<integer>80</integer>
+			<integer>150</integer>
 			<key>ypos</key>
-			<integer>110</integer>
+			<integer>180</integer>
 		</dict>
 		<key>BDA6722B-CA07-4163-914B-3E80415A3DEF</key>
 		<dict>
@@ -297,16 +370,16 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>70</integer>
 		</dict>
 		<key>E2DB7BB2-A020-42E1-9BC2-DB762538A89E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>360</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>190</integer>
+			<integer>220</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -317,7 +390,7 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 		<string>192.168.1.8:32400</string>
 	</dict>
 	<key>version</key>
-	<string>0.91</string>
+	<string>1.0</string>
 	<key>webaddress</key>
 	<string>http://plex.tv</string>
 </dict>
