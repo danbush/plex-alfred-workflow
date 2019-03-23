@@ -6,6 +6,19 @@
 	<string>com.danbush.plex</string>
 	<key>connections</key>
 	<dict>
+		<key>438D98CA-6B20-48EA-96E7-52E73A1C499B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E2DB7BB2-A020-42E1-9BC2-DB762538A89E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</key>
 		<array>
 			<dict>
@@ -33,7 +46,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>E2DB7BB2-A020-42E1-9BC2-DB762538A89E</string>
+				<string>438D98CA-6B20-48EA-96E7-52E73A1C499B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -213,6 +226,25 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<false/>
+				<key>matchmode</key>
+				<integer>2</integer>
+				<key>matchstring</key>
+				<string>^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>438D98CA-6B20-48EA-96E7-52E73A1C499B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -237,6 +269,13 @@ Here's a link to help you find your token:
 https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/</string>
 	<key>uidata</key>
 	<dict>
+		<key>438D98CA-6B20-48EA-96E7-52E73A1C499B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
 		<key>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</key>
 		<dict>
 			<key>xpos</key>
@@ -278,7 +317,7 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 		<string>192.168.1.8:32400</string>
 	</dict>
 	<key>version</key>
-	<string>0.9</string>
+	<string>0.91</string>
 	<key>webaddress</key>
 	<string>http://plex.tv</string>
 </dict>
