@@ -6,47 +6,6 @@
 	<string>com.danbush.plex</string>
 	<key>connections</key>
 	<dict>
-		<key>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>EA8C37EE-EB1E-45E1-8DCA-F0131DFE1AEF</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>233D9B44-AF96-494C-B7F5-05976CA8F253</key>
-		<array/>
-		<key>5D935144-4864-4D72-93A9-8146112E8B63</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>233D9B44-AF96-494C-B7F5-05976CA8F253</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>85753215-C8BA-498A-92A9-8C219242E84A</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5D935144-4864-4D72-93A9-8146112E8B63</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</key>
 		<array>
 			<dict>
@@ -74,17 +33,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>85753215-C8BA-498A-92A9-8C219242E84A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</string>
+				<string>E2DB7BB2-A020-42E1-9BC2-DB762538A89E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -276,81 +225,9 @@ fi</string>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>233D9B44-AF96-494C-B7F5-05976CA8F253</string>
+			<string>E2DB7BB2-A020-42E1-9BC2-DB762538A89E</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>5D935144-4864-4D72-93A9-8146112E8B63</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>inputstring</key>
-				<string>{query}</string>
-				<key>matchcasesensitive</key>
-				<false/>
-				<key>matchmode</key>
-				<integer>2</integer>
-				<key>matchstring</key>
-				<string>^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>85753215-C8BA-498A-92A9-8C219242E84A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>inputstring</key>
-				<string>{query}</string>
-				<key>matchcasesensitive</key>
-				<false/>
-				<key>matchmode</key>
-				<integer>2</integer>
-				<key>matchstring</key>
-				<string>```*</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>EA8C37EE-EB1E-45E1-8DCA-F0131DFE1AEF</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -360,34 +237,6 @@ Here's a link to help you find your token:
 https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/</string>
 	<key>uidata</key>
 	<dict>
-		<key>0ABB10EF-3DB1-44EE-8613-8A8F223F2C2D</key>
-		<dict>
-			<key>xpos</key>
-			<integer>220</integer>
-			<key>ypos</key>
-			<integer>250</integer>
-		</dict>
-		<key>233D9B44-AF96-494C-B7F5-05976CA8F253</key>
-		<dict>
-			<key>xpos</key>
-			<integer>610</integer>
-			<key>ypos</key>
-			<integer>180</integer>
-		</dict>
-		<key>5D935144-4864-4D72-93A9-8146112E8B63</key>
-		<dict>
-			<key>xpos</key>
-			<integer>460</integer>
-			<key>ypos</key>
-			<integer>180</integer>
-		</dict>
-		<key>85753215-C8BA-498A-92A9-8C219242E84A</key>
-		<dict>
-			<key>xpos</key>
-			<integer>360</integer>
-			<key>ypos</key>
-			<integer>200</integer>
-		</dict>
 		<key>8DD4AC75-AE5B-4303-A693-EA5D7299DD7F</key>
 		<dict>
 			<key>xpos</key>
@@ -413,12 +262,12 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 			<key>ypos</key>
 			<integer>40</integer>
 		</dict>
-		<key>EA8C37EE-EB1E-45E1-8DCA-F0131DFE1AEF</key>
+		<key>E2DB7BB2-A020-42E1-9BC2-DB762538A89E</key>
 		<dict>
 			<key>xpos</key>
 			<integer>360</integer>
 			<key>ypos</key>
-			<integer>300</integer>
+			<integer>190</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -429,7 +278,7 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 		<string>192.168.1.8:32400</string>
 	</dict>
 	<key>version</key>
-	<string>0.3</string>
+	<string>0.9</string>
 	<key>webaddress</key>
 	<string>http://plex.tv</string>
 </dict>
