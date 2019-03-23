@@ -389,9 +389,11 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 		<string>xx</string>
 		<key>pms-ip-address</key>
 		<string>xx</string>
+		<key>thumbnail_count</key>
+		<string>5</string>
 	</dict>
 	<key>version</key>
-	<string>1.02</string>
+	<string>1.10</string>
 	<key>webaddress</key>
 	<string>http://plex.tv</string>
 </dict>
