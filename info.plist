@@ -389,18 +389,21 @@ Loading slowly? Try lowering the "thumbnail_count" in the Workflow Configuration
 		<key>plex-token</key>
 		<string>A5G-diKa4sF7RF3S43yc</string>
 		<key>pms-ip-address</key>
-		<string>192.168.131.2:32400</string>
+		<string>208.59.45.121:32400</string>
 		<key>secondary-ip</key>
-		<string>45-56-124-90.1bf8733f3bcf40c8995be02edc10a321.plex.direct:8443</string>
+		<string>(optional)</string>
 		<key>secondary-token</key>
-		<string>A5G-diKa4sF7RF3S43yc</string>
+		<string>(optional)</string>
 		<key>thumbnail_count</key>
-		<string>2</string>
+		<string>15</string>
 	</dict>
 	<key>variablesdontexport</key>
-	<array/>
+	<array>
+		<string>plex-token</string>
+		<string>pms-ip-address</string>
+	</array>
 	<key>version</key>
-	<string>1.14</string>
+	<string>1.15</string>
 	<key>webaddress</key>
 	<string>http://plex.tv</string>
 </dict>
