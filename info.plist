@@ -36,7 +36,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>BDA6722B-CA07-4163-914B-3E80415A3DEF</string>
+				<string>B1EEDBDE-97DE-4E9B-B89D-F7E20BFAF9E5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -97,13 +97,12 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string># THESE VARIABLES MUST BE SET. SEE THE ONEUPDATER README FOR AN EXPLANATION OF EACH.
-readonly remote_info_plist='https://raw.githubusercontent.com/danbush/plex-alfred-workflow/master/info.plist'
+				<string>readonly remote_info_plist='https://raw.githubusercontent.com/danbush/plex-alfred-workflow/master/info.plist'
 readonly workflow_url='https://github.com/danbush/plex-alfred-workflow/raw/master/Plex%20Search.alfredworkflow'
-readonly download_type='direct'
+readonly workflow_type='workflow'
 readonly frequency_check='0'
 
-# FROM HERE ON, CODE SHOULD BE LEFT UNTOUCHED!
+# FROM HERE ON, CODE SHOULD BE LEFT UNTOUCHED UNLESS YOU KNOW WHAT YOU ARE DOING
 function abort {
   echo "${1}" &gt;&amp;2
   exit 1
@@ -116,7 +115,7 @@ function url_exists {
 function notification {
   readonly local notificator="$(find . -type d -name 'Notificator.app')"
   if [[ -n "${notificator}" ]]; then
-    "${notificator}/Contents/Resources/Scripts/notificator" --message "${1}" --title "${alfred_workflow_name}" --subtitle 'A new version is available'
+    "${notificator}/Contents/MacOS/applet" "${1}" "${alfred_workflow_name}" 'A new version is availale'
     return
   fi
 
@@ -134,7 +133,7 @@ readonly local_info_plist='info.plist'
 readonly local_version="$(/usr/libexec/PlistBuddy -c 'print version' "${local_info_plist}")"
 
 [[ -n "${local_version}" ]] || abort 'You need to set a workflow version in the configuration sheet.'
-[[ "${download_type}" =~ ^(direct|page|github_release)$ ]] || abort "'download_type' (${download_type}) needs to be one of 'direct', 'page', or 'github_release'."
+[[ "${workflow_type}" =~ ^(workflow|page)$ ]] || abort "'workflow_type' (${workflow_type}) needs to be one of 'workflow' or 'page'."
 [[ "${frequency_check}" =~ ^[0-9]+$ ]] || abort "'frequency_check' (${frequency_check}) needs to be a number."
 
 # Check for updates
@@ -145,27 +144,23 @@ if [[ $(find "${local_info_plist}" -mtime +"${frequency_check}"d) ]]; then
   curl --silent --location --output "${tmp_file}" "${remote_info_plist}"
   readonly remote_version="$(/usr/libexec/PlistBuddy -c 'print version' "${tmp_file}")"
 
-  if [[ "${local_version}" == "${remote_version}" ]]; then
-    touch "${local_info_plist}" # Reset timer by touching local file
-    exit 0
-  fi
-
-  if [[ "${download_type}" == 'page' ]]; then
-    notification 'Opening download page…'
-    open "${workflow_url}"
-    exit 0
-  fi
-
-  download_url="$([[ "${download_type}" == 'github_release' ]] &amp;&amp; curl --silent "https://api.github.com/repos/${workflow_url}/releases/latest" | grep 'browser_download_url' | head -1 | sed -E 's/.*browser_download_url": "(.*)"/\1/' || echo "${workflow_url}")"
-
-  if url_exists "${download_url}"; then
-    notification 'Downloading and installing…'
-    curl --silent --location --output "${HOME}/Downloads/${alfred_workflow_name}.alfredworkflow" "${download_url}"
-    open "${HOME}/Downloads/${alfred_workflow_name}.alfredworkflow"
+  if [[ "${local_version}" != "${remote_version}" ]]; then
+    if [[ "${workflow_type}" == 'page' ]]; then
+      notification 'Opening download page…'
+      open "${workflow_url}"
+    else
+      if url_exists "${workflow_url}"; then
+        notification 'Downloading and installing…'
+        curl --silent --location --output "${HOME}/Downloads/${alfred_workflow_name}.alfredworkflow" "${workflow_url}"
+        open "${HOME}/Downloads/${alfred_workflow_name}.alfredworkflow"
+      else
+        abort "'workflow_url' (${workflow_url}) appears to not be reachable."
+      fi # url_exists
+    fi # workflow_type
   else
-    abort "'workflow_url' (${download_url}) appears to not be reachable."
-  fi
-fi</string>
+    touch "${local_info_plist}" # Reset timer by touching local file
+  fi # diff
+fi #find</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -176,7 +171,7 @@ fi</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>BDA6722B-CA07-4163-914B-3E80415A3DEF</string>
+			<string>B1EEDBDE-97DE-4E9B-B89D-F7E20BFAF9E5</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -206,6 +201,8 @@ fi</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>1</integer>
 				<key>argumenttype</key>
@@ -244,7 +241,7 @@ fi</string>
 			<key>uid</key>
 			<string>932D137E-9894-45D6-A929-1EF9B7EF29FE</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -291,6 +288,8 @@ fi</string>
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<false/>
 			</dict>
@@ -299,7 +298,7 @@ fi</string>
 			<key>uid</key>
 			<string>238C5B35-5E54-4ACF-9A8A-91FB1603F935</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -326,7 +325,9 @@ fi</string>
 Hit the little "[x]" button at the top right, and insert your plex-token and the IP address of your Plex Media Server (with port).
 
 Here's a link to help you find your token:
-https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/</string>
+https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/
+
+Loading slowly? Try lowering the "thumbnail_count" in the Workflow Configuration area. For huge servers 0 might be the best option.</string>
 	<key>uidata</key>
 	<dict>
 		<key>238C5B35-5E54-4ACF-9A8A-91FB1603F935</key>
@@ -364,16 +365,16 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 			<key>ypos</key>
 			<integer>180</integer>
 		</dict>
-		<key>BDA6722B-CA07-4163-914B-3E80415A3DEF</key>
+		<key>B1EEDBDE-97DE-4E9B-B89D-F7E20BFAF9E5</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>note</key>
 			<string>OneUpdater</string>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>455</integer>
 			<key>ypos</key>
-			<integer>70</integer>
+			<integer>80</integer>
 		</dict>
 		<key>E2DB7BB2-A020-42E1-9BC2-DB762538A89E</key>
 		<dict>
@@ -386,14 +387,20 @@ https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-ple
 	<key>variables</key>
 	<dict>
 		<key>plex-token</key>
-		<string>xx</string>
+		<string>A5G-diKa4sF7RF3S43yc</string>
 		<key>pms-ip-address</key>
-		<string>xx</string>
+		<string>192.168.131.2:32400</string>
+		<key>secondary-ip</key>
+		<string>45-56-124-90.1bf8733f3bcf40c8995be02edc10a321.plex.direct:8443</string>
+		<key>secondary-token</key>
+		<string>A5G-diKa4sF7RF3S43yc</string>
 		<key>thumbnail_count</key>
-		<string>5</string>
+		<string>2</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.10</string>
+	<string>1.14</string>
 	<key>webaddress</key>
 	<string>http://plex.tv</string>
 </dict>
